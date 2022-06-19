@@ -50,7 +50,7 @@ def getLoc(ipList):
         url = f'https://ipapi.co/{ipAddress}/json/'
         response = requests.get(url)
         data = response.json()
-        
+
         # cek if IP is private ip
         try:
             if data['error'] == True:
@@ -58,10 +58,10 @@ def getLoc(ipList):
         except KeyError:
             pass
 
-        
+
         lon =data['longitude']
         lat = data['latitude']
-        if lon == None or lat == None:
+        if lon is None or lat is None:
             continue
         city = data['city']
         List.append((ipAddress,(lon,lat),city))
