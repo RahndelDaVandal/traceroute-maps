@@ -13,7 +13,7 @@ def traceroute(hostname):
         IP = line.split("  ")
         if len(IP)>1:
             IP = IP[1].split("(")
-            if len(IP)>1:
-                IP = IP[1].split(")")
-                ipList.append(IP[0])
+        if len(IP)>1:
+            IP = IP[1].split(")")
+            ipList.append(IP[0])
     return ipList
